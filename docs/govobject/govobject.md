@@ -33,7 +33,7 @@ Allow to create a govObj from a json or stringifiedJSON obj
 ####  `fromString`
 Allow to create a govObj from an hex string
 ####  `checkedSerialize`
-Return an hexa string that can be used in innovad CLI
+Return an hexa string that can be used in moneybyted CLI
 ####  `serialize`
 Return an hexa string
 ####  `inspect`
@@ -64,7 +64,7 @@ var jsonProposal = {
   payment_address:'yXGeNPQXYFXhLAN1ZKrAjxzzBnZ2JZNKnh',
   payment_amount:10,
   type:1,//In this case, it will cast a proposal
-  url:"http://www.innova.org/proposal/first_proposal"
+  url:"http://www.moneybyte.org/proposal/first_proposal"
 };
 
 //Will instantiate the govObject given the json passed as arg for fromObject
@@ -113,9 +113,9 @@ fromString.inspect();
 You could shallowcopy a first govObj into a second one
 
 ```javascript
-proposal.url="http://innova.org/badUrl"
+proposal.url="http://moneybyte.org/badUrl"
 var shallowCopyProposal = proposal.shallowCopy();
-proposal.url="http://innova.org/fixedUrl"
+proposal.url="http://moneybyte.org/fixedUrl"
 
 console.log(proposal.url!==shallowCopyProposal.url)//return true as it's a copy
 console.log(proposal!==shallowCopyProposal)//return true
@@ -146,7 +146,7 @@ var jsonProposal = {
   payment_address:'yXGeNPQXYFXhLAN1ZKrAjxzzBnZ2JZNKnh',
   payment_amount:10,
   type:1,
-  url:"http://www.innova.org"
+  url:"http://www.moneybyte.org"
 };
 
 var proposal = new Proposal();

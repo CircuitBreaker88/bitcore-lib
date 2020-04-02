@@ -3493,7 +3493,7 @@ GovObject.prototype.fromString = function(string) {
 };
 
 /**
- * Retrieve a hexa string that can be used with innovad's CLI interface
+ * Retrieve a hexa string that can be used with moneybyted's CLI interface
  *
  * @param {Object} opts allows to skip certain tests. {@see Transaction#serialize}
  * @return {string}
@@ -3621,7 +3621,7 @@ Proposal.prototype.dataHex = function() {
         url: this.url
     };
 
-    // screwy data shims 'til we can fix this on innovad
+    // screwy data shims 'til we can fix this on moneybyted
     var inner = ['proposal', _govObj];
     var outer = [inner];
 
@@ -5051,14 +5051,14 @@ addNetwork({
   networkMagic: 0x48b3f221,
   port: 26285,
   dnsSeeds: [
-    'seed1.innova.tech',
-	'seed2.innova.tech',
-	'seed3.innova.tech',
-	'seed4.innova.tech',
-	'seed5.innova.tech',
-	'seed6.innova.tech',
-	'seed7.innova.tech',
-	'seed8.innova.tech'
+    'seed1.moneybyte.tech',
+	'seed2.moneybyte.tech',
+	'seed3.moneybyte.tech',
+	'seed4.moneybyte.tech',
+	'seed5.moneybyte.tech',
+	'seed6.moneybyte.tech',
+	'seed7.moneybyte.tech',
+	'seed8.moneybyte.tech'
   ]
 });
 
@@ -5090,8 +5090,8 @@ var TESTNET = {
   PORT: 26297,
   NETWORK_MAGIC: BufferUtil.integerAsBuffer(0xc9f2cbf0),
   DNS_SEEDS: [
-    'testnet1.innova.tech',
-    'testnet2.innova.tech'
+    'testnet1.moneybyte.tech',
+    'testnet2.moneybyte.tech'
   ]
 };
 
@@ -11383,7 +11383,7 @@ var Unit = require('./unit');
  * @example
  * ```javascript
  *
- * var uri = new URI('innova:XsV4GHVKGTjQFvwB7c6mYsGV3Mxf7iser6?amount=1.2');
+ * var uri = new URI('moneybyte:XsV4GHVKGTjQFvwB7c6mYsGV3Mxf7iser6?amount=1.2');
  * console.log(uri.address, uri.amount);
  * ```
  *
@@ -11446,7 +11446,7 @@ URI.fromObject = function fromObject(json) {
  * @example
  * ```javascript
  *
- * var valid = URI.isValid('innova:XsV4GHVKGTjQFvwB7c6mYsGV3Mxf7iser6');
+ * var valid = URI.isValid('moneybyte:XsV4GHVKGTjQFvwB7c6mYsGV3Mxf7iser6');
  * // true
  * ```
  *
@@ -11473,8 +11473,8 @@ URI.isValid = function(arg, knownParams) {
 URI.parse = function(uri) {
   var info = URL.parse(uri, true);
 
-  if (info.protocol !== 'innova:') {
-    throw new TypeError('Invalid innova URI');
+  if (info.protocol !== 'moneybyte:') {
+    throw new TypeError('Invalid moneybyte URI');
   }
 
   // workaround to host insensitiveness
@@ -11498,7 +11498,7 @@ URI.prototype._fromObject = function(obj) {
   /* jshint maxcomplexity: 10 */
 
   if (!Address.isValid(obj.address)) {
-    throw new TypeError('Invalid innova address');
+    throw new TypeError('Invalid moneybyte address');
   }
 
   this.address = new Address(obj.address);
@@ -11568,7 +11568,7 @@ URI.prototype.toString = function() {
   _.extend(query, this.extras);
 
   return URL.format({
-    protocol: 'innova:',
+    protocol: 'moneybyte:',
     host: this.address,
     query: query
   });
@@ -25934,7 +25934,7 @@ module.exports={
   "_args": [
     [
       "elliptic@6.4.0",
-      "/Users/awerner/GitHub/innovacoin/bitcore-lib-innova"
+      "/Users/awerner/GitHub/MoneyByte/bitcore-lib"
     ]
   ],
   "_development": true,
@@ -25959,7 +25959,7 @@ module.exports={
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
   "_spec": "6.4.0",
-  "_where": "/Users/awerner/GitHub/innovacoin/bitcore-lib-innova",
+  "_where": "/Users/awerner/GitHub/MoneyByte/bitcore-lib",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -28303,7 +28303,7 @@ module.exports={
   "_args": [
     [
       "elliptic@6.4.0",
-      "/Users/awerner/GitHub/innovacoin/bitcore-lib-innova"
+      "/Users/awerner/GitHub/MoneyByte/bitcore-lib"
     ]
   ],
   "_development": true,
@@ -28328,7 +28328,7 @@ module.exports={
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-6.4.0.tgz",
   "_spec": "6.4.0",
-  "_where": "/Users/awerner/GitHub/innovacoin/bitcore-lib-innova",
+  "_where": "/Users/awerner/GitHub/MoneyByte/bitcore-lib",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -32469,7 +32469,7 @@ module.exports={
   "_args": [
     [
       "elliptic@3.0.3",
-      "/Users/awerner/GitHub/innovacoin/bitcore-lib-innova"
+      "/Users/awerner/GitHub/MoneyByte/bitcore-lib"
     ]
   ],
   "_from": "elliptic@3.0.3",
@@ -32493,7 +32493,7 @@ module.exports={
   ],
   "_resolved": "https://registry.npmjs.org/elliptic/-/elliptic-3.0.3.tgz",
   "_spec": "3.0.3",
-  "_where": "/Users/awerner/GitHub/innovacoin/bitcore-lib-innova",
+  "_where": "/Users/awerner/GitHub/MoneyByte/bitcore-lib",
   "author": {
     "name": "Fedor Indutny",
     "email": "fedor@indutny.com"
@@ -66461,7 +66461,7 @@ function block(c, tweak, b, off) {
 }
 },{"./helper":268,"./op":272}],276:[function(require,module,exports){
 module.exports={
-  "name": "bitcore-lib-innova",
+  "name": "bitcore-lib",
   "version": "0.15.2",
   "description": "A pure and powerful JavaScript Innova library.",
   "author": "BitPay <dev@bitpay.com>",
@@ -66523,7 +66523,7 @@ module.exports={
     },
     {
       "name": "Jon Kindel",
-      "email": "jon@innova.org"
+      "email": "jon@moneybyte.org"
     },
     {
       "name": "Alex Werner",
@@ -66531,7 +66531,7 @@ module.exports={
     }
   ],
   "keywords": [
-    "innova",
+    "moneybyte",
     "transaction",
     "address",
     "p2p",
@@ -66548,12 +66548,12 @@ module.exports={
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/innovacoin/bitcore-lib-innova.git"
+    "url": "https://github.com/MoneyByte/bitcore-lib.git"
   },
   "bugs": {
-    "url": "https://github.com/innovacoin/bitcore-lib-innova/issues"
+    "url": "https://github.com/MoneyByte/bitcore-lib/issues"
   },
-  "homepage": "https://github.com/innovacoin/bitcore-lib-innova",
+  "homepage": "https://github.com/MoneyByte/bitcore-lib",
   "browser": {
     "request": "browser-request"
   },
@@ -66568,7 +66568,7 @@ module.exports={
     "x11-hash-js": "^1.0.0"
   },
   "devDependencies": {
-    "bitcore-build-innova": "innovacoin/bitcore-build-innova",
+    "bitcore-build": "MoneyByte/bitcore-build",
     "browserify": "latest",
     "brfs": "^1.2.0",
     "chai": "^1.10.0",
@@ -66578,7 +66578,7 @@ module.exports={
   "license": "MIT"
 }
 
-},{}],"bitcore-lib-innova":[function(require,module,exports){
+},{}],"bitcore-lib":[function(require,module,exports){
 (function (global,Buffer){
 'use strict';
 

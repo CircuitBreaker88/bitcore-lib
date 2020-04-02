@@ -1,5 +1,5 @@
 {
-  "name": "bitcore-lib-innova",
+  "name": "bitcore-lib",
   "version": "0.15.2",
   "description": "A pure and powerful JavaScript Innova library.",
   "author": "BitPay <dev@bitpay.com>",
@@ -61,7 +61,7 @@
     },
     {
       "name": "Jon Kindel",
-      "email": "jon@innova.org"
+      "email": "jon@moneybyte.org"
     },
     {
       "name": "Alex Werner",
@@ -69,7 +69,7 @@
     }
   ],
   "keywords": [
-    "innova",
+    "moneybyte",
     "transaction",
     "address",
     "p2p",
@@ -86,12 +86,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/innovacoin/bitcore-lib-innova.git"
+    "url": "https://github.com/MoneyByte/bitcore-lib.git"
   },
   "bugs": {
-    "url": "https://github.com/innovacoin/bitcore-lib-innova/issues"
+    "url": "https://github.com/MoneyByte/bitcore-lib/issues"
   },
-  "homepage": "https://github.com/innovacoin/bitcore-lib-innova",
+  "homepage": "https://github.com/MoneyByte/bitcore-lib",
   "browser": {
     "request": "browser-request"
   },
@@ -106,7 +106,7 @@
     "x11-hash-js": "^1.0.0"
   },
   "devDependencies": {
-    "bitcore-build-innova": "innovacoin/bitcore-build-innova",
+    "bitcore-build": "MoneyByte/bitcore-build",
     "browserify": "latest",
     "brfs": "^1.2.0",
     "chai": "^1.10.0",
